@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f0a54186734e5bc40a3d0c090caf0b00
+timeCreated: 1556366851
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145042
+  packageName: Bakery - interior and props
+  packageVersion: 1.0
+  assetPath: Assets/Bakery - interior and props/Bakery - interior and props/models/prefab/window.prefab
+  uploadId: 397551

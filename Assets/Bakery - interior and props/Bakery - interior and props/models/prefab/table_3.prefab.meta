@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1b51b08bd270f4a45adabba48309da20
+timeCreated: 1556440252
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145042
+  packageName: Bakery - interior and props
+  packageVersion: 1.0
+  assetPath: Assets/Bakery - interior and props/Bakery - interior and props/models/prefab/table_3.prefab
+  uploadId: 397551
