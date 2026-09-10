@@ -7,4 +7,10 @@ public class Menus : MonoBehaviour
     {
         SceneManager.LoadScene("Inicio");
     }
+
+    public void Salir()
+    {
+        Debug.Log("Saliendo...");
+        Application.Quit();
+    }
 }
