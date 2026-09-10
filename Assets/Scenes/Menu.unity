@@ -1143,6 +1143,7 @@ GameObject:
   - component: {fileID: 1778237432}
   - component: {fileID: 1778237431}
   - component: {fileID: 1778237430}
+  - component: {fileID: 1778237433}
   m_Layer: 5
   m_Name: Jugar Button
   m_TagString: Untagged
@@ -1213,7 +1214,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1778237431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2116466462}
+        m_TargetAssemblyTypeName: Menus, Assembly-CSharp
+        m_MethodName: Jugar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1778237431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,6 +1265,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778237428}
   m_CullTransparentMesh: 1
+--- !u!114 &1778237433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778237428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d2f721aa4a8f849856ced4a7b899b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menus
 --- !u!1 &2103293552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1425,7 @@ GameObject:
   - component: {fileID: 2116466459}
   - component: {fileID: 2116466461}
   - component: {fileID: 2116466460}
+  - component: {fileID: 2116466462}
   m_Layer: 5
   m_Name: MenuBackground
   m_TagString: Untagged
@@ -1468,6 +1494,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116466458}
   m_CullTransparentMesh: 1
+--- !u!114 &2116466462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116466458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d2f721aa4a8f849856ced4a7b899b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menus
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
