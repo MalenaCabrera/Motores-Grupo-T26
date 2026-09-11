@@ -859,6 +859,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1415522414}
+    - target: {fileID: 2438884889679210370, guid: c074fa9e2fa07644c912298b22b92f14, type: 3}
+      propertyPath: m_Constraints
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 6647802278040684960, guid: c074fa9e2fa07644c912298b22b92f14, type: 3}
       propertyPath: m_Name
       value: Player
