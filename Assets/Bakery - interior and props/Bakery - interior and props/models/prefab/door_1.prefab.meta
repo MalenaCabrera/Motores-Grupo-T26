@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 8108240cbc0f83945b9e2acc46272b22
+timeCreated: 1556366847
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145042
+  packageName: Bakery - interior and props
+  packageVersion: 1.0
+  assetPath: Assets/Bakery - interior and props/Bakery - interior and props/models/prefab/door_1.prefab
+  uploadId: 397551
