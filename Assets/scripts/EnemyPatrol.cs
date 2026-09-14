@@ -6,7 +6,7 @@ public class EnemyPatrol : MonoBehaviour
     [Header("Speed Between Waypoints")]
     [SerializeField] private float speed;
 
-    //Here you set the Waypoints and Wait Time between Waypoints
+    //Here you set the Waypoints and "WaitTime" between Waypoints
     [Header("Waypoints/Rutines")]
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float waitTime;
@@ -15,11 +15,11 @@ public class EnemyPatrol : MonoBehaviour
     private bool isWaiting;
     private bool isRotating;
 
-    [Header("Configuración de Persecucin")]
+    [Header("Persecucin")]
     [SerializeField] private float velocidadPersecucion = 6f;
     private Transform targetJugador;
+    private PlayerHealth vidaJugador; // reference to the health of the player we're chasing
     private bool estaPersiguiendo;
-
 
     void Start()
     {
@@ -39,6 +39,7 @@ public class EnemyPatrol : MonoBehaviour
 
     void Update()
     {
+        //this line is placed at the top to ensure that the pursuit is prioritized over routine
         if (estaPersiguiendo)
         {
             PerseguirAlJugador();
@@ -98,33 +99,57 @@ public class EnemyPatrol : MonoBehaviour
 
         isRotating = false;
     }
-    public void IniciarPersecucion(Transform jugador)
+    public void IniciarPersecucion(Transform jugador, GameObject pared)
     {
-        //Detiene la rutina del patrullaje
+        enabled = true;
+        //stop all the coroutines
         StopAllCoroutines();
         isWaiting = false;
         isRotating = false;
 
-        //Activa el modo persecución
-        targetJugador = jugador;
-        estaPersiguiendo = true;
+        if (pared != null)
+        {
+            Destroy(pared);
+            //(Aca se podrian agregar polvo o efectos mas adelante)
+        }
 
+        //Lock the target and start the chase
+        targetJugador = jugador;
+        vidaJugador = jugador.GetComponent<PlayerHealth>(); // look up the player's health once, when the chase starts
+        estaPersiguiendo = true;
     }
+
     private void PerseguirAlJugador()
     {
         if (targetJugador == null) return;
 
-        // Se mueve hacia la posición del jugador
+        //If the player is already dead, stop moving and rotating entirely
+        if (vidaJugador != null && vidaJugador.EstaMuerto)
+        {
+            return;
+        }
+
+        //this makes enemy to move in a straight line toward the player at running speed
         transform.position = Vector3.MoveTowards(transform.position, targetJugador.position, velocidadPersecucion * Time.deltaTime);
 
-        // Rota suavemente para mirar al jugador mientras lo persigue
-        Vector3 direction = (targetJugador.position - transform.position).normalized;
-        direction.y = 0; //evita la inclinacion en rampas.. luego decidir si es mejor aclararlo en codigo o en el inspector.
+        //Rotate the plane on Y to face the player directly
+        Vector3 direccion = (targetJugador.position - transform.position).normalized;
+        direccion.y = 0;
 
-        if (direction != Vector3.zero)
+        if (direccion != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            Quaternion targetRotation = Quaternion.LookRotation(direccion);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {   //If the object the enemy collides with is the player, it kills him instantly
+        if (!collision.gameObject.CompareTag("Player")) return;
+
+        PlayerHealth componenteVidaJugador = collision.gameObject.GetComponent<PlayerHealth>();
+        if (componenteVidaJugador != null)
+        {
+            componenteVidaJugador.Matar();
         }
     }
 }

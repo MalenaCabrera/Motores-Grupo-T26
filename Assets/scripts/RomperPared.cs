@@ -2,29 +2,22 @@ using UnityEngine;
 
 public class RomperPared : MonoBehaviour
 {
-    [Header("Configuración del Agujero")]
+    [Header("Configuración de la Persecución")]
     [SerializeField] private EnemyPatrol enemigo;
     [SerializeField] private GameObject paredARomper;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Detecta si el jugador cruza la zona
+        // Detects if the object that entered has the "Player" tag
         if (other.CompareTag("Player"))
         {
-            
-            if (paredARomper != null)
-            {
-                Destroy(paredARomper); 
-                // se podria agregar un efecto de de la pared rompiendose a futuro
-            }
-
-            // si Enemigo no es null, comienza la persecución
+            // Si el enemigo no es null, hace el llamado
             if (enemigo != null)
             {
-                enemigo.IniciarPersecucion(other.transform);
+                enemigo.IniciarPersecucion(other.transform, paredARomper);
             }
 
-            // destruye el objeto trigger
+            // Destroy the trigger that collides with the player
             Destroy(gameObject);
         }
     }
