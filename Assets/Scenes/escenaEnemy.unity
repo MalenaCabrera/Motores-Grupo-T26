@@ -354,11 +354,30 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a05bff2b52dba4f419cf0c69b4cab89c, type: 3}
+--- !u!1 &246610810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6647802278040684960, guid: c074fa9e2fa07644c912298b22b92f14, type: 3}
+  m_PrefabInstance: {fileID: 3940714808350121558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &251159122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8105207993658863053, guid: c074fa9e2fa07644c912298b22b92f14, type: 3}
   m_PrefabInstance: {fileID: 3940714808350121558}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &251159128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246610810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539714a3d7307a54784553b2100c35fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  vidaMaxima: 100
+  tiempoInvulnerabilidad: 0.5
 --- !u!114 &294347657 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3143148355342475432, guid: 3ca97f740f9d7a745bb3d869872bf207, type: 3}
@@ -2258,6 +2277,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3143148355342475432, guid: 3ca97f740f9d7a745bb3d869872bf207, type: 3}
+      propertyPath: waitTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143148355342475432, guid: 3ca97f740f9d7a745bb3d869872bf207, type: 3}
       propertyPath: velocidadPersecucion
       value: 5
       objectReference: {fileID: 0}
@@ -2279,6 +2302,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5850900114648176138, guid: 3ca97f740f9d7a745bb3d869872bf207, type: 3}
       propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850900114648176138, guid: 3ca97f740f9d7a745bb3d869872bf207, type: 3}
+      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5850900114648176138, guid: 3ca97f740f9d7a745bb3d869872bf207, type: 3}
@@ -2368,7 +2395,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8105207993658863053, guid: c074fa9e2fa07644c912298b22b92f14, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1936230547}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6647802278040684960, guid: c074fa9e2fa07644c912298b22b92f14, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 251159128}
   m_SourcePrefab: {fileID: 100100000, guid: c074fa9e2fa07644c912298b22b92f14, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

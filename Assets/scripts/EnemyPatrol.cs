@@ -18,6 +18,7 @@ public class EnemyPatrol : MonoBehaviour
     [Header("Persecución")]
     [SerializeField] private float velocidadPersecucion = 6f;
     private Transform targetJugador;
+    private PlayerHealth vidaJugador; // reference to the health of the player we're chasing
     private bool estaPersiguiendo;
 
     void Start()
@@ -72,8 +73,8 @@ public class EnemyPatrol : MonoBehaviour
             currentWaypoint = 0;
         }
 
-        else 
-        { 
+        else
+        {
             int nextWaypoint;
             do nextWaypoint = Random.Range(0, waypoints.Length);
             while (nextWaypoint == currentWaypoint);
@@ -114,12 +115,19 @@ public class EnemyPatrol : MonoBehaviour
 
         //Lock the target and start the chase
         targetJugador = jugador;
+        vidaJugador = jugador.GetComponent<PlayerHealth>(); // look up the player's health once, when the chase starts
         estaPersiguiendo = true;
     }
 
     private void PerseguirAlJugador()
     {
         if (targetJugador == null) return;
+
+        //If the player is already dead, stop moving and rotating entirely
+        if (vidaJugador != null && vidaJugador.EstaMuerto)
+        {
+            return;
+        }
 
         //this makes enemy to move in a straight line toward the player at running speed
         transform.position = Vector3.MoveTowards(transform.position, targetJugador.position, velocidadPersecucion * Time.deltaTime);
@@ -138,10 +146,10 @@ public class EnemyPatrol : MonoBehaviour
     {   //If the object the enemy collides with is the player, it kills him instantly
         if (!collision.gameObject.CompareTag("Player")) return;
 
-        PlayerHealth vidaJugador = collision.gameObject.GetComponent<PlayerHealth>();
-        if (vidaJugador != null)
+        PlayerHealth componenteVidaJugador = collision.gameObject.GetComponent<PlayerHealth>();
+        if (componenteVidaJugador != null)
         {
-            vidaJugador.Matar();
+            componenteVidaJugador.Matar();
         }
     }
 }
