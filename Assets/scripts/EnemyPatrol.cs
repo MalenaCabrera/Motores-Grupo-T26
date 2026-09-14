@@ -100,6 +100,7 @@ public class EnemyPatrol : MonoBehaviour
     }
     public void IniciarPersecucion(Transform jugador, GameObject pared)
     {
+        enabled = true;
         //stop all the coroutines
         StopAllCoroutines();
         isWaiting = false;
@@ -131,6 +132,16 @@ public class EnemyPatrol : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(direccion);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {   //If the object the enemy collides with is the player, it kills him instantly
+        if (!collision.gameObject.CompareTag("Player")) return;
+
+        PlayerHealth vidaJugador = collision.gameObject.GetComponent<PlayerHealth>();
+        if (vidaJugador != null)
+        {
+            vidaJugador.Matar();
         }
     }
 }
