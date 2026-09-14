@@ -15,11 +15,16 @@ public class EnemyPatrol : MonoBehaviour
     private bool isWaiting;
     private bool isRotating;
 
+    [Header("Configuración de Persecución (Emboscada)")]
+    [SerializeField] private float velocidadPersecucion = 6f;
+    private Transform targetJugador;
+    private bool estaPersiguiendo;
+
     void Start()
     {
         if (waypoints == null || waypoints.Length == 0)
         {
-            Debug.LogError($"[EnemyPatrol] {gameObject.name} no tiene Waypoints en el Inspector.");
+            Debug.LogWarning($"[EnemyPatrol] {gameObject.name} no tiene Waypoints en el Inspector.");
             enabled = false;
             return;
         }
@@ -85,5 +90,41 @@ public class EnemyPatrol : MonoBehaviour
         }
 
         isRotating = false;
+    }
+    public void IniciarEmboscada(Transform jugador, GameObject pared)
+    {
+        // 1. Detiene las rutinas de patrulla de golpe
+        StopAllCoroutines();
+        isWaiting = false;
+        isRotating = false;
+
+        // 2. Destruye la pared
+        if (pared != null)
+        {
+            Destroy(pared);
+            // Tip: Aquí podrías spawnear partículas de polvo/escombros más adelante
+        }
+
+        // 3. Fija el objetivo y arranca la persecución
+        targetJugador = jugador;
+        estaPersiguiendo = true;
+    }
+
+    private void PerseguirAlJugador()
+    {
+        if (targetJugador == null) return;
+
+        // Se mueve en línea recta hacia el jugador a velocidad de carrera
+        transform.position = Vector3.MoveTowards(transform.position, targetJugador.position, velocidadPersecucion * Time.deltaTime);
+
+        // Rota plano en el eje Y para mirar directamente al jugador
+        Vector3 direccion = (targetJugador.position - transform.position).normalized;
+        direccion.y = 0;
+
+        if (direccion != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direccion);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
     }
 }
