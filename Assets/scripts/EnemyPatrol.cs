@@ -6,7 +6,7 @@ public class EnemyPatrol : MonoBehaviour
     [Header("Speed Between Waypoints")]
     [SerializeField] private float speed;
 
-    //Here you set the Waypoints and Wait Time between Waypoints
+    //Here you set the Waypoints and "WaitTime" between Waypoints
     [Header("Waypoints/Rutines")]
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float waitTime;
@@ -15,7 +15,7 @@ public class EnemyPatrol : MonoBehaviour
     private bool isWaiting;
     private bool isRotating;
 
-    [Header("Configuración de Persecución (Emboscada)")]
+    [Header("Persecución")]
     [SerializeField] private float velocidadPersecucion = 6f;
     private Transform targetJugador;
     private bool estaPersiguiendo;
@@ -38,6 +38,13 @@ public class EnemyPatrol : MonoBehaviour
 
     void Update()
     {
+        //this line is placed at the top to ensure that the pursuit is prioritized over routine
+        if (estaPersiguiendo)
+        {
+            PerseguirAlJugador();
+            return;
+        }
+
         //Do not move while waiting or while turning towards the next Waypoint
         if (isWaiting || isRotating) return;
 
@@ -93,19 +100,18 @@ public class EnemyPatrol : MonoBehaviour
     }
     public void IniciarEmboscada(Transform jugador, GameObject pared)
     {
-        // 1. Detiene las rutinas de patrulla de golpe
+        //stop all the coroutines
         StopAllCoroutines();
         isWaiting = false;
         isRotating = false;
 
-        // 2. Destruye la pared
         if (pared != null)
         {
             Destroy(pared);
-            // Tip: Aquí podrías spawnear partículas de polvo/escombros más adelante
+            //(Aca se podrian agregar polvo o efectos mas adelante)
         }
 
-        // 3. Fija el objetivo y arranca la persecución
+        //Lock the target and start the chase
         targetJugador = jugador;
         estaPersiguiendo = true;
     }
@@ -114,10 +120,10 @@ public class EnemyPatrol : MonoBehaviour
     {
         if (targetJugador == null) return;
 
-        // Se mueve en línea recta hacia el jugador a velocidad de carrera
+        //this makes enemy to move in a straight line toward the player at running speed
         transform.position = Vector3.MoveTowards(transform.position, targetJugador.position, velocidadPersecucion * Time.deltaTime);
 
-        // Rota plano en el eje Y para mirar directamente al jugador
+        //Rotate the plane on Y to face the player directly
         Vector3 direccion = (targetJugador.position - transform.position).normalized;
         direccion.y = 0;
 
