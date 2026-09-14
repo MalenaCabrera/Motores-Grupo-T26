@@ -17,8 +17,18 @@ public class EnemyPatrol : MonoBehaviour
 
     void Start()
     {
+        if (waypoints == null || waypoints.Length == 0)
+        {
+            Debug.LogError($"[EnemyPatrol] {gameObject.name} no tiene Waypoints en el Inspector.");
+            enabled = false;
+            return;
+        }
         Vector3 direction = (waypoints[0].position - transform.position).normalized;
         transform.rotation = Quaternion.LookRotation(direction);
+        if (direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(direction);
+        }
     }
 
     void Update()
@@ -45,10 +55,18 @@ public class EnemyPatrol : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         //Randomize nextWaypoint
-        int nextWaypoint;
-        do nextWaypoint = Random.Range(0, waypoints.Length);
-        while (nextWaypoint == currentWaypoint);
-        currentWaypoint = nextWaypoint;
+        if (waypoints.Length == 1)
+        {
+            currentWaypoint = 0;
+        }
+
+        else 
+        { 
+            int nextWaypoint;
+            do nextWaypoint = Random.Range(0, waypoints.Length);
+            while (nextWaypoint == currentWaypoint);
+            currentWaypoint = nextWaypoint;
+        }
         isWaiting = false;
         StartCoroutine(RotBetweenWaypoints(waypoints[currentWaypoint].position));
     }
