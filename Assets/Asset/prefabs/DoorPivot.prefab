@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 501027764303568512}
-  - component: {fileID: 8841267555974314875}
   m_Layer: 0
   m_Name: DoorPivot
   m_TagString: Untagged
@@ -31,52 +30,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3485518589632314083}
-  - {fileID: 931672427601752648}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8841267555974314875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916067545903298509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b97606a16193d2a42a1c4e619e59887e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
---- !u!1 &1939103033746787913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 931672427601752648}
-  m_Layer: 0
-  m_Name: Wall_DoorSnapper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &931672427601752648
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939103033746787913}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5222998, y: -0.17299998, z: -0.15299982}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 501027764303568512}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &6974603990544408551
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +44,8 @@ GameObject:
   - component: {fileID: 529956250889862028}
   - component: {fileID: 5204768814230613167}
   - component: {fileID: 5185833396297732438}
-  - component: {fileID: 6277460209818443341}
+  - component: {fileID: 1382103938709086481}
+  - component: {fileID: 2306345185690109469}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -184,13 +140,27 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1715413, y: 2.5373569, z: 0.28996104}
-  m_Center: {x: 0.58576924, y: 1.2686784, z: -0.14498004}
---- !u!65 &6277460209818443341
+  m_Size: {x: 2.7242026, y: 2.5373569, z: 2.583264}
+  m_Center: {x: 0.52551997, y: 1.2686784, z: -0.025015593}
+--- !u!114 &1382103938709086481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6974603990544408551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97606a16193d2a42a1c4e619e59887e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Script_Door
+  openAngle: -90
+  speed: 3
+--- !u!65 &2306345185690109469
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,9 +175,9 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.09, y: 2.5373569, z: 1.91}
+  m_Size: {x: 1.1715413, y: 2.5373569, z: 0.10000113}
   m_Center: {x: 0.58576924, y: 1.2686784, z: -0.05000008}
