@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ca17c2e33eb4d4b4a8321825b1686584
+timeCreated: 1556371298
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145042
+  packageName: Bakery - interior and props
+  packageVersion: 1.0
+  assetPath: Assets/Bakery - interior and props/Bakery - interior and props/models/prefab/Basket.prefab
+  uploadId: 397551

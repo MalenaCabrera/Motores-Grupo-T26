@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cf2d4b048ef9c874785a44c2c127bdae
+timeCreated: 1556371274
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 145042
+  packageName: Bakery - interior and props
+  packageVersion: 1.0
+  assetPath: Assets/Bakery - interior and props/Bakery - interior and props/models/Materials/croissant.mat
+  uploadId: 397551
