@@ -98,7 +98,7 @@ public class EnemyPatrol : MonoBehaviour
 
         isRotating = false;
     }
-    public void IniciarEmboscada(Transform jugador, GameObject pared)
+    public void IniciarPersecucion(Transform jugador, GameObject pared)
     {
         //stop all the coroutines
         StopAllCoroutines();
