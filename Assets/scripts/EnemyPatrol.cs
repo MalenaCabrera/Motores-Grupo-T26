@@ -67,21 +67,22 @@ public class EnemyPatrol : MonoBehaviour
         //"waitTime" defines how long the enemy waits between each waypoint
         yield return new WaitForSeconds(waitTime);
 
-        ////Randomize nextWaypoint
-        //if (waypoints.Length == 1)
-        //{
-        //    currentWaypoint = 0;
-        //}
+        //Randomize nextWaypoint
+        if (waypoints.Length == 1)
+        {
+            currentWaypoint = 0;
+        }
 
-        //else
-        //{
-        //    int nextWaypoint;
-        //    do nextWaypoint = Random.Range(0, waypoints.Length);
-        //    while (nextWaypoint == currentWaypoint);
-        //    currentWaypoint = nextWaypoint;
-        //}
-        //isWaiting = false;
-        //StartCoroutine(RotBetweenWaypoints(waypoints[currentWaypoint].position));
+        else
+        {
+            currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
+            //int nextWaypoint;
+            //do nextWaypoint = Random.Range(0, waypoints.Length);
+            //while (nextWaypoint == currentWaypoint);
+            //currentWaypoint = nextWaypoint;
+        }
+        isWaiting = false;
+        StartCoroutine(RotBetweenWaypoints(waypoints[currentWaypoint].position));
     }
 
     //Smoothly rotates the enemy to face the next waypoint before it starts moving towards it
