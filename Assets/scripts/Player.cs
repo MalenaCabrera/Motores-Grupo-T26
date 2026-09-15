@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class player : MonoBehaviour
 {
@@ -26,11 +27,16 @@ public class player : MonoBehaviour
     private float yaw;
     private float pitch = 10f;
 
+    
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -40,6 +46,7 @@ public class player : MonoBehaviour
 
     void Update()
     {
+
         // Estados del jugador
         isCrouching = Input.GetKey(KeyCode.LeftControl);
         isRunning = Input.GetKey(KeyCode.LeftShift) && !isCrouching;
@@ -65,6 +72,8 @@ public class player : MonoBehaviour
 
     void FixedUpdate()
     {
+        
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 inputDir = new Vector3(horizontal, 0, vertical).normalized;
@@ -76,7 +85,7 @@ public class player : MonoBehaviour
             return;
         }
 
-        // Movimiento relativo a hacia dónde mira la cámara
+        //Movimiento relativo a hacia dónde mira la cámara
         Vector3 camForward = cameraTransform.forward;
         camForward.y = 0;
         camForward.Normalize();
@@ -91,7 +100,7 @@ public class player : MonoBehaviour
         Vector3 velocity = moveDir * currentSpeed;
         rb.linearVelocity = new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
 
-        // Rotar el personaje hacia donde se mueve
+        //Rotar el personaje hacia donde se mueve
         float targetAngle = Mathf.Atan2(moveDir.x, moveDir.z) * Mathf.Rad2Deg;
         float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref rotationVelocity, rotationSmoothTime);
         transform.rotation = Quaternion.Euler(0, smoothAngle, 0);
