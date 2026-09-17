@@ -8,24 +8,35 @@ public class PlayerInputs : MonoBehaviour
     public Vector2 look;
     public bool jump;
 
+    public bool sprint;
+
     public float playerSensitivity = 1f;
 
-    public void OnMove(InputValue value)
+    public void OnMove(InputAction.CallbackContext context)
     {
-        MoveInput(value.Get<Vector2>());
+        Move(context.ReadValue<Vector2>());
     }
 
-    public void OnLook(InputValue value)
+    public void OnLook(InputAction.CallbackContext context)
     {
-        LookInput(value.Get<Vector2>());       
+        LookInput(context.ReadValue<Vector2>());       
     }
 
-    public void OnJump(InputValue value)
+    public void OnJump(InputAction.CallbackContext context)
     {
-        JumpInput(value.isPressed);
+        if (context.performed)
+            jump = true;
+        else if (context.canceled)
+            jump = false;
     }
 
-    public void MoveInput(Vector2 newMove)
+
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        sprint = context.ReadValueAsButton();
+    }
+
+    public void Move(Vector2 newMove)
     { 
        move = newMove;
     }
@@ -39,5 +50,9 @@ public class PlayerInputs : MonoBehaviour
         jump = stateJump;
     }
 
+    public void Sprint(bool newSprint)
+    {
+        sprint = newSprint;
+    }
 
 }
