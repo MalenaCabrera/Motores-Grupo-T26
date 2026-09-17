@@ -36,7 +36,7 @@
             ],
             "bindings": [
                 {
-                    "name": "Muvement",
+                    "name": "WASD",
                     "id": "1200d7f7-2b5c-47d6-9e96-e5ea45a9faac",
                     "path": "2DVector",
                     "interactions": "Press",
