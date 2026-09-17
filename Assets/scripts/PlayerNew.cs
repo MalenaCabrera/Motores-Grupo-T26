@@ -157,33 +157,7 @@ public class PlayerNew : MonoBehaviour
             }
         }
     }
-    //private void HandleCrouch()
-    //{
-    //    if (_playerInput.actions["Crouch"].IsPressed())
-    //    {
-    //        // Agachado
-    //        _char.height = crouchHeight;
-    //        _char.center = new Vector3(_char.center.x, crouchCentery, _char.center.z);
-
-    //        if (characterVisual != null)
-    //        {
-    //            characterVisual.localScale = crouchScale;
-    //            characterVisual.localPosition = new Vector3(0f, 0.5f, 0f);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        // De pie
-    //        _char.height = standingHeight;
-    //        _char.center = new Vector3(_char.center.x, standingCentery, _char.center.z);
-
-    //        if (characterVisual != null)
-    //        {
-    //            characterVisual.localScale = standingScale;
-    //            characterVisual.localPosition = new Vector3(0f, standingCentery, 0f);
-    //        }
-    //    }
-    //}
+   
 
     private void CameraRotation()
     {
