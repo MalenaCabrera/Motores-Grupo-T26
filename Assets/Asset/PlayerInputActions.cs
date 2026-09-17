@@ -129,7 +129,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Crouch"",
                     ""type"": ""Button"",
                     ""id"": ""d551fb1e-a65e-4d48-92cb-c759a3d435b5"",
                     ""expectedControlType"": """",
@@ -230,11 +230,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2dd1dbb9-398a-43bc-ba19-6fd5e0ed2f49"",
-                    ""path"": """",
+                    ""path"": ""<Keyboard>/leftCtrl"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -266,7 +266,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_PlayerNew_Jump = m_PlayerNew.FindAction("Jump", throwIfNotFound: true);
         m_PlayerNew_Look = m_PlayerNew.FindAction("Look", throwIfNotFound: true);
         m_PlayerNew_Sprint = m_PlayerNew.FindAction("Sprint", throwIfNotFound: true);
-        m_PlayerNew_Newaction = m_PlayerNew.FindAction("New action", throwIfNotFound: true);
+        m_PlayerNew_Crouch = m_PlayerNew.FindAction("Crouch", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -351,7 +351,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerNew_Jump;
     private readonly InputAction m_PlayerNew_Look;
     private readonly InputAction m_PlayerNew_Sprint;
-    private readonly InputAction m_PlayerNew_Newaction;
+    private readonly InputAction m_PlayerNew_Crouch;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerNew".
     /// </summary>
@@ -380,9 +380,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_PlayerNew_Sprint;
         /// <summary>
-        /// Provides access to the underlying input action "PlayerNew/Newaction".
+        /// Provides access to the underlying input action "PlayerNew/Crouch".
         /// </summary>
-        public InputAction @Newaction => m_Wrapper.m_PlayerNew_Newaction;
+        public InputAction @Crouch => m_Wrapper.m_PlayerNew_Crouch;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -421,9 +421,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
+            @Crouch.started += instance.OnCrouch;
+            @Crouch.performed += instance.OnCrouch;
+            @Crouch.canceled += instance.OnCrouch;
         }
 
         /// <summary>
@@ -447,9 +447,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
+            @Crouch.started -= instance.OnCrouch;
+            @Crouch.performed -= instance.OnCrouch;
+            @Crouch.canceled -= instance.OnCrouch;
         }
 
         /// <summary>
@@ -532,11 +532,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Crouch" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
     }
 }

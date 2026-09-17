@@ -43,7 +43,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "New action",
+                    "name": "Crouch",
                     "type": "Button",
                     "id": "d551fb1e-a65e-4d48-92cb-c759a3d435b5",
                     "expectedControlType": "",
@@ -144,11 +144,11 @@
                 {
                     "name": "",
                     "id": "2dd1dbb9-398a-43bc-ba19-6fd5e0ed2f49",
-                    "path": "",
+                    "path": "<Keyboard>/leftCtrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

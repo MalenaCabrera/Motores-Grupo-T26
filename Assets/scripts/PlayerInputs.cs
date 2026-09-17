@@ -8,6 +8,7 @@ public class PlayerInputs : MonoBehaviour
     public Vector2 look;
     public bool jump;
 
+    public bool crouch;
     public bool sprint;
 
     public float playerSensitivity = 1f;
@@ -36,6 +37,12 @@ public class PlayerInputs : MonoBehaviour
         sprint = context.ReadValueAsButton();
     }
 
+    public void OnCrouch(InputAction.CallbackContext context)
+    {
+        crouch = context.ReadValueAsButton();
+    }
+
+
     public void Move(Vector2 newMove)
     { 
        move = newMove;
@@ -55,4 +62,8 @@ public class PlayerInputs : MonoBehaviour
         sprint = newSprint;
     }
 
+    public void Crouch(bool newCrouch)
+    {
+        crouch = newCrouch;
+    }
 }
