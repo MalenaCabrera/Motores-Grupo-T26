@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerNew : MonoBehaviour
 {
+    [Header("Interacción")]
+    public float interactionDistance = 3f;
+    public LayerMask interactableLayer;
+
     private CharacterController _char;
     private PlayerInput _playerInput;
     private Transform _cameraTransform;
@@ -58,6 +62,22 @@ public class PlayerNew : MonoBehaviour
     {
         HandleCrouch();
         HandleMovementAndGravity();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Ray ray = new Ray(_cameraTransform.position, _cameraTransform.forward);
+            RaycastHit hit;
+
+
+            if (Physics.Raycast(ray, out hit, interactionDistance, interactableLayer))
+            {
+
+                DoorRange puerta = hit.collider.GetComponent<DoorRange>();
+                if (puerta != null)
+                {
+                    puerta.Interactuar();
+                }
+            }
+        }
     }
 
     private void LateUpdate()
