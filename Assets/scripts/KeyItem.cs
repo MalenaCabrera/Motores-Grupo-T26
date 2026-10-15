@@ -2,16 +2,27 @@ using UnityEngine;
 
 public class KeyItem : MonoBehaviour
 {
-    [Header("Configuración de la Llave")]
-    [Tooltip("Nombre o ID de la llave. Debe coincidir con el que pide la puerta.")]
-    public string keyID = "LlavePrincipal";
+    [Header("Datos del Ítem")]
+    [SerializeField] private Item itemData;
 
     [Header("Audio (Opcional)")]
     [SerializeField] private AudioClip pickupSound;
 
     public void Recoger(PlayerNew player)
     {
-        player.AgregarLlave(keyID);
+        if (player.Inventario == null)
+        {
+            Debug.LogError("KeyItem: el Player no tiene Inventory asignado.", this);
+            return;
+        }
+
+        if (itemData == null)
+        {
+            Debug.LogError("KeyItem: falta asignar el Item (ScriptableObject) en el Inspector.", this);
+            return;
+        }
+
+        if (!player.Inventario.AgregarItem(itemData)) return;
 
         if (pickupSound != null)
         {
@@ -20,4 +31,20 @@ public class KeyItem : MonoBehaviour
 
         Destroy(gameObject);
     }
+    //public void Recoger(PlayerNew player)
+    //{
+    //    if (player.Inventario != null && itemData != null)
+    //    {
+    //        bool guardado = player.Inventario.AgregarItem(itemData);
+    //        if (!guardado) return;
+    //    }
+
+    //    if (pickupSound != null)
+    //    {
+    //        AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+    //    }
+
+    //    Destroy(gameObject);
+    //}
 }
+
