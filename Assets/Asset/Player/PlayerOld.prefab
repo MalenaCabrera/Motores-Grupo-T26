@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1910325211410795986}
   - component: {fileID: 2959301259485860059}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerOld
   m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 2400286945368383750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 0.91, z: -18.3}
+  m_LocalPosition: {x: 23, y: 0.91, z: -17.759}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -188,6 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7317f538c6bd1e6478d94104c94371cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerNew
+  interactionDistance: 3
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  inventario: {fileID: 0}
   walkSpeed: 4
   sprintSpeed: 7
   jumpHeight: 1.2
@@ -198,9 +203,6 @@ MonoBehaviour:
   crouchHeight: 1
   standingCentery: 1
   crouchCentery: 0.5
-  characterVisual: {fileID: 4340232375759466544}
-  standingScale: {x: 1, y: 1, z: 1}
-  crouchScale: {x: 1, y: 0.5, z: 1}
   cinemachineCameraTarget: {fileID: 2349387948099480501}
   sensitivity: 1
   bottomClamp: -30

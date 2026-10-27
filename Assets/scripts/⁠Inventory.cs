@@ -143,15 +143,5 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    //private void UpdateUI()
-    //{
-    //    for (int i = 0; i < slotUIs.Count; i++)
-    //    {
-    //        if (i < _slots.Length)
-    //        {
-    //            slotUIs[i].SetItem(_slots[i]);
-    //            slotUIs[i].SetSelected(i == _selectedIndex);
-    //        }
-    //    }
-    //}
+  
 }

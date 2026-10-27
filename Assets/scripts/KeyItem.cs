@@ -31,20 +31,6 @@ public class KeyItem : MonoBehaviour
 
         Destroy(gameObject);
     }
-    //public void Recoger(PlayerNew player)
-    //{
-    //    if (player.Inventario != null && itemData != null)
-    //    {
-    //        bool guardado = player.Inventario.AgregarItem(itemData);
-    //        if (!guardado) return;
-    //    }
 
-    //    if (pickupSound != null)
-    //    {
-    //        AudioSource.PlayClipAtPoint(pickupSound, transform.position);
-    //    }
-
-    //    Destroy(gameObject);
-    //}
 }
 
