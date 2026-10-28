@@ -87,3 +87,4 @@ public class PlayerAnimation : MonoBehaviour
         animator.SetTrigger(opened ? OpenDoorHash : CloseDoorHash);
     }
 }
+
