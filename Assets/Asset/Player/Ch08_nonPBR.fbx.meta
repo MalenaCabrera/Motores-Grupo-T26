@@ -3,7 +3,57 @@ guid: 7b96bb07696cbae4bb0491798194070b
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1001_Diffuse
+    second: {fileID: 2800000, guid: c6646408029bf084aa0080c3f7c56579, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1001_Glossiness
+    second: {fileID: 2800000, guid: 5841139987e75fe41a158ad55d11f2d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1001_Normal
+    second: {fileID: 2800000, guid: 29b44306113534642a179c7b30fb713b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1001_Specular
+    second: {fileID: 2800000, guid: 0b0aeed2e0a32af4db3e721a426d8398, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1002_Diffuse
+    second: {fileID: 2800000, guid: 244f2ce90a8433c40a4990def5e864a3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1002_Glossiness
+    second: {fileID: 2800000, guid: a673f0fffc6eed64eb41f52f805c809b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1002_Normal
+    second: {fileID: 2800000, guid: 6c3ae8dd6b2ab1f4ca6cdaae828e3281, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1002_Specular
+    second: {fileID: 2800000, guid: 2f87a80e5535a9e4194dad82b5d0b59e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1003_Diffuse
+    second: {fileID: 2800000, guid: d034b2c7215af44489f0d74a17722e74, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Ch08_1003_Normal
+    second: {fileID: 2800000, guid: 201342925fe35144185474f731b038be, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
