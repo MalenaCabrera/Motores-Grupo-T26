@@ -11381,11 +11381,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 39caf177f5290ad41af48d907bd22335, type: 3}
   m_PrefabInstance: {fileID: 381714768}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &384747792 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4930335194036381634, guid: 1b7e20f66ca535b4eb948b178e920e3e, type: 3}
-  m_PrefabInstance: {fileID: 6382152619220847454}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &386355278
 GameObject:
   m_ObjectHideFlags: 0
@@ -16829,40 +16824,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4099755359663856286, guid: 1b7e20f66ca535b4eb948b178e920e3e, type: 3}
   m_PrefabInstance: {fileID: 6382152619220847454}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384747792}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b20eb9d942d2244faa68fd8ff498238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputs
---- !u!114 &583186558 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 916250588324486553, guid: 1b7e20f66ca535b4eb948b178e920e3e, type: 3}
-  m_PrefabInstance: {fileID: 6382152619220847454}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384747792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed627cc7e78452d449b6866a12c1d0a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventory
---- !u!114 &583186565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384747792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7072f165f9ba5d4468c849eb8764ad69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HeldItemDisplay
-  inventory: {fileID: 583186558}
-  handSocket: {fileID: 398770273}
-  heldPosition: {x: 0, y: 0.1, z: 0.04}
-  heldRotation: {x: 0, y: -100, z: 0}
-  heldScale: {x: 1, y: 1, z: 1}
 --- !u!43 &585270073
 Mesh:
   m_ObjectHideFlags: 0
@@ -66701,16 +66668,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -0.595
       objectReference: {fileID: 0}
+    - target: {fileID: 8717688394244409278, guid: 1b7e20f66ca535b4eb948b178e920e3e, type: 3}
+      propertyPath: handSocket
+      value: 
+      objectReference: {fileID: 398770273}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8695448970577692810, guid: 1b7e20f66ca535b4eb948b178e920e3e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 398770273}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4930335194036381634, guid: 1b7e20f66ca535b4eb948b178e920e3e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 583186565}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b7e20f66ca535b4eb948b178e920e3e, type: 3}
 --- !u!1001 &6811868144881280405
 PrefabInstance:

@@ -1332,6 +1332,7 @@ GameObject:
   - component: {fileID: 1245038980278401571}
   - component: {fileID: 3889892356706127926}
   - component: {fileID: 916250588324486553}
+  - component: {fileID: 8717688394244409278}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -1537,6 +1538,23 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &8717688394244409278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4930335194036381634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7072f165f9ba5d4468c849eb8764ad69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeldItemDisplay
+  inventory: {fileID: 916250588324486553}
+  handSocket: {fileID: 0}
+  heldPosition: {x: 0, y: 0.1, z: 0.04}
+  heldRotation: {x: 0, y: -100, z: 0}
+  heldScale: {x: 1, y: 1, z: 1}
 --- !u!1 &4942644257393016407
 GameObject:
   m_ObjectHideFlags: 0
