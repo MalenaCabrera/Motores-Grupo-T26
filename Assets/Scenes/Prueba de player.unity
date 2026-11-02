@@ -16068,20 +16068,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7021590931246295734, guid: c49cd3761459cf1459d82af56a835b4e, type: 3}
   m_PrefabInstance: {fileID: 1848542714}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &513359923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 513359920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b97606a16193d2a42a1c4e619e59887e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::KeyItem
-  itemData: {fileID: 11400000, guid: e80da9e3db1d5e3418a49289ff173a94, type: 2}
-  pickupSound: {fileID: 0}
 --- !u!65 &513359924
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54642,9 +54628,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7021590931246295734, guid: c49cd3761459cf1459d82af56a835b4e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 513359923}
     - targetCorrespondingSourceObject: {fileID: 7021590931246295734, guid: c49cd3761459cf1459d82af56a835b4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 513359924}

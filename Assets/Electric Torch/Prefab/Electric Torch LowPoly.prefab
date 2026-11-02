@@ -113,6 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7654539451631824908}
   - component: {fileID: 7904057512621157830}
+  - component: {fileID: 8890399467748545770}
   m_Layer: 0
   m_Name: Electric Torch LowPoly
   m_TagString: Untagged
@@ -159,6 +160,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &8890399467748545770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7021590931246295734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97606a16193d2a42a1c4e619e59887e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KeyItem
+  itemData: {fileID: 11400000, guid: e80da9e3db1d5e3418a49289ff173a94, type: 2}
+  pickupSound: {fileID: 0}
 --- !u!1 &7904057512449899626
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,3 +324,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TorchAimWithCamera
   cameraTransform: {fileID: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
+  maxAngleFromBody: 80

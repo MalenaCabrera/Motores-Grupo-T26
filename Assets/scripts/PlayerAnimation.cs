@@ -25,6 +25,7 @@ public class PlayerAnimation : MonoBehaviour
     private static readonly int JumpHash = Animator.StringToHash("Jump");
     private static readonly int OpenDoorHash = Animator.StringToHash("OpenDoor");
     private static readonly int CloseDoorHash = Animator.StringToHash("CloseDoor");
+    private static readonly int IsBackwardsHash = Animator.StringToHash("IsBackwards");
 
     private PlayerNew player;
 
@@ -72,7 +73,10 @@ public class PlayerAnimation : MonoBehaviour
 
         // Mixamo solo trae "Crouched Walking" (no hay agachado quieto).
         // Con este multiplicador la animación se congela cuando no te movés.
+        
         animator.SetFloat(CrouchMoveHash, player.HorizontalSpeed > 0.1f ? 1f : 0f);
+
+        animator.SetBool(IsBackwardsHash, player.IsMovingBackwards);
     }
 
     private void HandleJump()

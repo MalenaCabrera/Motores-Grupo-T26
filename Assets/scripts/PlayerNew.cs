@@ -5,6 +5,15 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerNew : MonoBehaviour
 {
+    [Header("Linterna")]
+    [SerializeField] private string torchItemID = "Linterna";   // el itemID del Item de la linterna
+    [SerializeField] private float torchTurnThreshold = 60f;    // desde cuántos grados de desvío el cuerpo gira
+    [SerializeField] private float torchTurnSmoothTime = 0.12f;
+    private float _torchTurnVelocity;
+    private bool _torchTurning;
+
+    public bool IsTorchEquipped => inventario != null && inventario.TieneItemEnMano(torchItemID);
+
     [Header("Interacción")]
     public float interactionDistance = 3f;
     public LayerMask interactableLayer;
@@ -36,6 +45,8 @@ public class PlayerNew : MonoBehaviour
     // ---- Estado que lee PlayerAnimation (solo lectura desde afuera) ----
     public bool IsGrounded { get; private set; }
     public bool IsCrouching { get; private set; }
+    public Vector2 LocalMove { get; private set; }   // x = derecha, y = adelante (relativo al cuerpo)
+    public bool IsMovingBackwards => IsTorchEquipped && HorizontalSpeed > 0.1f && LocalMove.y < -0.5f;
     public bool IsSprinting { get; private set; }
     public float HorizontalSpeed { get; private set; }   // velocidad real en m/s (0 = quieto)
     public float VerticalVelocity => _playerVelocity.y;
@@ -78,6 +89,7 @@ public class PlayerNew : MonoBehaviour
     {
         HandleCrouch();
         HandleMovementAndGravity();
+        HandleTorchFacing();
 
         if (Input.GetKeyDown(KeyCode.E) && _cameraTransform != null)
         {
@@ -153,10 +165,19 @@ public class PlayerNew : MonoBehaviour
 
             moveDirection = (camForward * inputMove.y + camRight * inputMove.x).normalized;
 
-            float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
-            float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
+            // Con la linterna equipada el cuerpo no gira hacia donde caminás:
+            // lo orienta HandleTorchFacing según la cámara.
+            if (!IsTorchEquipped)
+            {
+                float targetAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+                float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, smoothAngle, 0f);
+            }
         }
+
+        // Fuera del if: se actualiza todos los frames. Sin input, moveDirection es cero y LocalMove también.
+        Vector3 local = transform.InverseTransformDirection(moveDirection);
+        LocalMove = new Vector2(local.x, local.z);
 
         if (_playerInput.actions["Jump"].WasPressedThisFrame() && isGrounded)
         {
@@ -172,6 +193,22 @@ public class PlayerNew : MonoBehaviour
 
         Vector3 finalMovement = (moveDirection * currentSpeed) + _playerVelocity;
         _char.Move(finalMovement * Time.deltaTime);
+    }
+
+    private void HandleTorchFacing()
+    {
+        if (!IsTorchEquipped) { _torchTurning = false; return; }
+
+        float diff = Mathf.DeltaAngle(transform.eulerAngles.y, _cinemachineTargetYaw);
+
+        if (Mathf.Abs(diff) > torchTurnThreshold) _torchTurning = true;
+        else if (Mathf.Abs(diff) < 5f) _torchTurning = false;
+
+        if (!_torchTurning) return;
+
+        float smooth = Mathf.SmoothDampAngle(transform.eulerAngles.y, _cinemachineTargetYaw,
+                                             ref _torchTurnVelocity, torchTurnSmoothTime);
+        transform.rotation = Quaternion.Euler(0f, smooth, 0f);
     }
 
     private void HandleCrouch()
