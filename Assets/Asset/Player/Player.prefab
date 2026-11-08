@@ -2409,8 +2409,8 @@ MonoBehaviour:
   gravity: -15
   crouchSpeed: 2
   standingHeight: 1.5
-  crouchHeight: 0.5
-  standingCentery: 1
+  crouchHeight: 1
+  standingCentery: 0.75
   crouchCentery: 0.5
   colliderRadius: 0.1
   cinemachineCameraTarget: {fileID: 8483920265073706278}

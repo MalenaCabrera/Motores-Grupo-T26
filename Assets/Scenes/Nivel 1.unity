@@ -1576,6 +1576,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5885483230182507517, guid: 94d5668319305794ab49479a2fe63c70, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15489,7 +15493,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.2
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 0
@@ -15518,7 +15522,7 @@ Transform:
   m_GameObject: {fileID: 435586719}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.71911573, z: 0, w: -0.6948904}
-  m_LocalPosition: {x: 11.965429, y: 3.2636, z: -9.518253}
+  m_LocalPosition: {x: 14.711304, y: 2.7973428, z: -9.609869}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16533,15 +16537,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3549175406611505483, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.965429
+      value: 14.711304
       objectReference: {fileID: 0}
     - target: {fileID: 3549175406611505483, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2636
+      value: 2.7973428
       objectReference: {fileID: 0}
     - target: {fileID: 3549175406611505483, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.518253
+      value: -9.609869
       objectReference: {fileID: 0}
     - target: {fileID: 3549175406611505483, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16576,6 +16580,10 @@ PrefabInstance:
       value: CinemachineCamera
       objectReference: {fileID: 0}
     - target: {fileID: 6038895436252285881, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
+      propertyPath: Lens.NearClipPlane
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038895436252285881, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 512319378}
@@ -16590,6 +16598,18 @@ PrefabInstance:
     - target: {fileID: 6436632697978346190, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
       propertyPath: ShoulderOffset.z
       value: -0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436632697978346190, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
+      propertyPath: AvoidObstacles.Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436632697978346190, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
+      propertyPath: AvoidObstacles.IgnoreTag
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6436632697978346190, guid: 2fcf38c57d6c2f94ba4de5658d64ca04, type: 3}
+      propertyPath: AvoidObstacles.CameraRadius
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
