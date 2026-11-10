@@ -16,6 +16,7 @@ Material:
   - _EMISSION
   - _NORMALMAP
   - _OCCLUSIONMAP
+  - _SPECULAR_SETUP
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -145,7 +146,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _UVSec: 0
-    - _WorkflowMode: 1
+    - _WorkflowMode: 0
     - _XRMotionVectorsPass: 1
     - _ZTest: 4
     - _ZWrite: 1

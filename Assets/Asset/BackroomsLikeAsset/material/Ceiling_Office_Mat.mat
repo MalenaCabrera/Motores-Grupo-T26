@@ -155,7 +155,7 @@ Material:
     - _Blue_Area_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorOverlay: {r: 1, g: 1, b: 1, a: 0}
-    - _EmissionColor: {r: 0.86788005, g: 0.9339623, b: 0.9042779, a: 1}
+    - _EmissionColor: {r: 0.8935119, g: 0.9150943, b: 0.90620744, a: 1}
     - _Emission_Color: {r: 6.0235295, g: 6.0235295, b: 6.0235295, a: 0}
     - _Green_Area_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Red_Area_Color: {r: 1, g: 1, b: 1, a: 0}
