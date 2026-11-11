@@ -15,4 +15,4 @@ MonoBehaviour:
   itemID: Linterna
   itemName: Linterna
   icon: {fileID: 21300000, guid: 1c4272d2f30ce6d40b166660bfaae4bf, type: 3}
-  handPrefab: {fileID: 7021590931246295734, guid: c49cd3761459cf1459d82af56a835b4e, type: 3}
+  handPrefab: {fileID: 995654695131490244, guid: 06c86864c1f03734796e217b3bf16bd8, type: 3}
