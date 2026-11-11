@@ -54,6 +54,11 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] private float attackRange = 1.6f;
     [SerializeField] private float attackDamage = 34f;
     [SerializeField] private float attackCooldown = 1.5f;
+    [Tooltip("Si está activo, el daño se aplica cuando la animación de ataque llama a OnAttackHit() " +
+             "(Animation Event en el frame del golpe). Si está apagado, se aplica apenas arranca el ataque.")]
+    [SerializeField] private bool damageOnAnimationEvent = true;
+    [Tooltip("Margen extra de distancia en el momento del golpe. Si te alejaste más que Attack Range + este valor, el golpe falla.")]
+    [SerializeField] private float hitRangeMargin = 0.5f;
 
     // Parámetros del Animator (opcionales: si no existen, simplemente no se usan).
     private static readonly int SpeedHash = Animator.StringToHash("Speed");
@@ -71,6 +76,7 @@ public class ZombieAI : MonoBehaviour
     private float lostTimer;
     private float repathTimer;
     private float nextAttackTime;
+    private bool pendingHit;
     private Vector3 lastKnownPlayerPos;
 
     private readonly RaycastHit[] hits = new RaycastHit[16];
@@ -265,8 +271,34 @@ public class ZombieAI : MonoBehaviour
         if (Time.time < nextAttackTime) return;
         nextAttackTime = Time.time + attackCooldown;
 
-        if (animator != null && animHasAttack) animator.SetTrigger(AttackHash);
-        if (playerHealth != null) playerHealth.RecibirDano(attackDamage);
+        bool hasAttackAnim = animator != null && animHasAttack;
+        if (hasAttackAnim) animator.SetTrigger(AttackHash);
+
+        if (damageOnAnimationEvent && hasAttackAnim)
+            pendingHit = true;      // el daño lo aplica OnAttackHit(), en el frame del golpe
+        else
+            ApplyDamage();          // sin animación de ataque: daño inmediato
+    }
+
+    /// <summary>
+    /// La llama el Animation Event del clip de ataque, en el frame en que el brazo golpea.
+    /// Tiene que ser public, sin parámetros, y el script tiene que estar en el mismo objeto que el Animator.
+    /// </summary>
+    public void OnAttackHit()
+    {
+        if (!pendingHit) return;    // evita golpes dobles o eventos sueltos
+        pendingHit = false;
+        ApplyDamage();
+    }
+
+    private void ApplyDamage()
+    {
+        if (player == null || playerHealth == null || playerHealth.EstaMuerto) return;
+
+        // Si el Player se alejó antes del golpe, el golpe falla.
+        if (PlanarDistanceTo(player.position) > attackRange + hitRangeMargin) return;
+
+        playerHealth.RecibirDano(attackDamage);
     }
 
     // --------------------------------------------------------------- VISIÓN
