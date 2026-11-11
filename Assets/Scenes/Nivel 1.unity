@@ -57074,13 +57074,15 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  chaseSpeed: 6
+  chaseSpeed: 4.5
   chaseRangeMultiplier: 1.5
   loseSightTime: 4
   canAttack: 1
   attackRange: 1.6
   attackDamage: 25
-  attackCooldown: 1.5
+  attackCooldown: 2.7
+  damageOnAnimationEvent: 1
+  hitRangeMargin: 0.5
 --- !u!195 &1604180879
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -57100,7 +57102,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &1604180881 stripped
