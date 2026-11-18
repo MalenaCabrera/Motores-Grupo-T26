@@ -20,6 +20,7 @@ public class EnemyPatrol : MonoBehaviour
     private Transform targetJugador;
     private PlayerHealth vidaJugador; // reference to the health of the player we're chasing
     private bool estaPersiguiendo;
+    [SerializeField] private string gameOverScene = "GameOverZombie1";
 
     void Start()
     {
@@ -150,7 +151,8 @@ public class EnemyPatrol : MonoBehaviour
         PlayerHealth componenteVidaJugador = collision.gameObject.GetComponent<PlayerHealth>();
         if (componenteVidaJugador != null)
         {
-            componenteVidaJugador.Matar();
+            componenteVidaJugador.Matar(gameOverScene);
+          
         }
     }
 }

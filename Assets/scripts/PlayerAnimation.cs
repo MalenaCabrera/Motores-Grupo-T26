@@ -26,6 +26,7 @@ public class PlayerAnimation : MonoBehaviour
     private static readonly int OpenDoorHash = Animator.StringToHash("OpenDoor");
     private static readonly int CloseDoorHash = Animator.StringToHash("CloseDoor");
     private static readonly int IsBackwardsHash = Animator.StringToHash("IsBackwards");
+    private static readonly int DieHash = Animator.StringToHash("Die");
 
     private PlayerNew player;
 
@@ -89,6 +90,14 @@ public class PlayerAnimation : MonoBehaviour
         // Se resetea el trigger opuesto para que no quede uno "colgado" si se spamea la E
         animator.ResetTrigger(opened ? CloseDoorHash : OpenDoorHash);
         animator.SetTrigger(opened ? OpenDoorHash : CloseDoorHash);
+    }
+
+    /// <summary>La llama PlayerHealth al morir: reproduce la animación y frena el resto.</summary>
+    public void PlayDeath()
+    {
+        if (animator == null) return;
+        animator.SetTrigger(DieHash);
+        enabled = false;   // frena el Update para que no pise la animación de muerte
     }
 }
 

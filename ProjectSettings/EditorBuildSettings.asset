@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final.unity
     guid: 5d16e0646f0f19343842db884bdcbec2
+  - enabled: 1
+    path: Assets/Scenes/GameOverZombie1.unity
+    guid: c211efbaaadb0b24e891b595fe814b39
+  - enabled: 1
+    path: Assets/Scenes/GameOverZombie2.unity
+    guid: 19487218587eb8c4ea61c4884c5a4806
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
