@@ -51,7 +51,6 @@ GameObject:
   - component: {fileID: 8614919160620199271}
   - component: {fileID: 6460487596234553103}
   - component: {fileID: 6652229557660908401}
-  - component: {fileID: 4544542626708550994}
   m_Layer: 0
   m_Name: Cube (21)
   m_TagString: Untagged
@@ -316,28 +315,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2476002326838904874}
-  m_Mesh: {fileID: 0}
---- !u!64 &4544542626708550994
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2476002326838904874}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &3253924633827275253
 GameObject:
@@ -653,7 +630,6 @@ GameObject:
   - component: {fileID: 4074839820782188452}
   - component: {fileID: 2512909412680493945}
   - component: {fileID: 2501323941707650234}
-  - component: {fileID: 721721878562825635}
   m_Layer: 0
   m_Name: Cube (22)
   m_TagString: Untagged
@@ -918,28 +894,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3796459265085943425}
-  m_Mesh: {fileID: 0}
---- !u!64 &721721878562825635
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3796459265085943425}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &5446277044082808519
 GameObject:
