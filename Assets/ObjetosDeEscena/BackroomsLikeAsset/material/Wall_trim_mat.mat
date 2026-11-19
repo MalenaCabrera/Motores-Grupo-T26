@@ -123,7 +123,7 @@ Material:
     - _ColorOverlayOpacity: 0
     - _Cull: 2
     - _CustomColor: 1
-    - _Cutoff: 0.5
+    - _Cutoff: 0.2
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
