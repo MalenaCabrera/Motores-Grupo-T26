@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
     [Tooltip("Nombre exacto de la escena que se carga al tocar Jugar. Tiene que estar en Build Settings.")]
     [SerializeField] private string gameSceneName = "Nivel 1";
 
+    [Tooltip("Escena a la que vuelve el botón Volver al menú.")]
+    [SerializeField] private string menuSceneName = "Menu";
+
     [Header("Paneles")]
     [Tooltip("Panel con el título y los botones principales.")]
     [SerializeField] private GameObject mainPanel;
@@ -39,6 +42,19 @@ public class MainMenu : MonoBehaviour
         }
 
         SceneManager.LoadScene(gameSceneName);
+    }
+
+    /// <summary>Botón Volver al menú (para la escena de victoria).</summary>
+    public void VolverAlMenu()
+    {
+        if (!Application.CanStreamedLevelBeLoaded(menuSceneName))
+        {
+            Debug.LogError("[MainMenu] No encuentro la escena '" + menuSceneName + "'. " +
+                           "Revisá que el nombre sea exacto y que esté en File > Build Profiles > Scene List.", this);
+            return;
+        }
+
+        SceneManager.LoadScene(menuSceneName);
     }
 
     /// <summary>Botón Créditos: muestra el panel de créditos.</summary>
