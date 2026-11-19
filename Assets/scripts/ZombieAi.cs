@@ -308,8 +308,8 @@ public class ZombieAI : MonoBehaviour
         // Si el Player se alejó antes del golpe, el golpe falla.
         if (PlanarDistanceTo(player.position) > attackRange + hitRangeMargin) return;
 
-        playerHealth.RecibirDano(attackDamage, "gameOverScene2");
-        //playerHealth.RecibirDano(attackDamage);
+        playerHealth.RecibirDano(attackDamage, "GameOverZombie2");
+       
     }
 
     // --------------------------------------------------------------- VISIÓN

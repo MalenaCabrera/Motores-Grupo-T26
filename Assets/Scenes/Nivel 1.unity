@@ -45761,8 +45761,8 @@ PrefabInstance:
       propertyPath: noteContent
       value: "Encuentra la llave correcta en las distintas habitaciones, las llaves
         falsas no podr\xE1s recogerlas. Para avanzar por los t\xFAneles o espacios
-        cerrados presiona SHIFT. Puedes cambiar el slot del inventario con la rueda
-        del mouse."
+        cerrados presiona CTRL Izquierdo. Puedes cambiar el slot del inventario con
+        la rueda del mouse."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -76764,6 +76764,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 113632895}
+    - target: {fileID: 6033967968172742317, guid: b1abdf16cc638b54b8e150f1be7134d3, type: 3}
+      propertyPath: damageOnAnimationEvent
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6994112919868649994, guid: b1abdf16cc638b54b8e150f1be7134d3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.335
