@@ -99,7 +99,7 @@ AudioMixerController:
     - 8f2d3da18a06d1e45b4d2ab36d7ede0a
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 9186199595490173882}
+  m_TargetSnapshot: {fileID: 2707827686434708547}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -178,6 +178,7 @@ AudioMixerSnapshotController:
     4e4f5a40984499746b41d568dcbab76d: -19.928473
     025429832d32d2b4294e60d10f15d2ed: -80
     c0a84765a1a0e0b40a45c97f171ce83b: -19.928473
+    263c490677b4731428d2b091c8eb7a6b: -20.09816
     d9015d8c4ee7859478a821a60864f567: -19.928473
   m_TransitionOverrides: {}
 --- !u!244 &5843177510934670139
@@ -253,6 +254,7 @@ AudioMixerSnapshotController:
   m_FloatValues:
     4e4f5a40984499746b41d568dcbab76d: -80
     025429832d32d2b4294e60d10f15d2ed: -59.606762
-    c0a84765a1a0e0b40a45c97f171ce83b: -39.928783
+    c0a84765a1a0e0b40a45c97f171ce83b: -59.606762
+    263c490677b4731428d2b091c8eb7a6b: -39.703533
     d9015d8c4ee7859478a821a60864f567: -35.30951
   m_TransitionOverrides: {}
