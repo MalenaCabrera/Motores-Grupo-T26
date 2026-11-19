@@ -2196,6 +2196,7 @@ GameObject:
   - component: {fileID: 8879741813397822412}
   - component: {fileID: 8980854148673908594}
   - component: {fileID: 2525543819455817230}
+  - component: {fileID: 1826466465664830747}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -2406,6 +2407,7 @@ MonoBehaviour:
   inventario: {fileID: 4576258770178106268}
   walkSpeed: 4
   sprintSpeed: 7
+  sprintBloqueado: 0
   jumpHeight: 1.2
   turnSmoothTime: 0.1
   gravity: -15
@@ -2630,6 +2632,22 @@ MonoBehaviour:
   crouchVolume: 0.25
   pitchRange: {x: 0.92, y: 1.08}
   landingMinFallSpeed: 4
+--- !u!114 &1826466465664830747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885483230182507517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca53d0c873ed3d4dbc08d5efe7a6d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionPrompt
+  promptPrefab: {fileID: 0}
+  offsetTowardsCamera: 0.15
+  heightOffset: 0.1
+  player: {fileID: 0}
 --- !u!1 &5960126741432043734
 GameObject:
   m_ObjectHideFlags: 0
