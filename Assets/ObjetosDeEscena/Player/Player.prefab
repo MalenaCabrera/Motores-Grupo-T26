@@ -2194,6 +2194,8 @@ GameObject:
   - component: {fileID: 5109384350961532102}
   - component: {fileID: 4576258770178106268}
   - component: {fileID: 8879741813397822412}
+  - component: {fileID: 8980854148673908594}
+  - component: {fileID: 2525543819455817230}
   m_Layer: 0
   m_Name: Player
   m_TagString: player
@@ -2449,6 +2451,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   vidaMaxima: 100
   tiempoInvulnerabilidad: 0.5
+  escenaGameOverPorDefecto: GameOverZombie1
+  retrasoGameOver: 1.5
 --- !u!114 &5109384350961532102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2499,6 +2503,133 @@ MonoBehaviour:
   heldPosition: {x: 0, y: 0.1, z: 0.04}
   heldRotation: {x: 0, y: -100, z: 0}
   heldScale: {x: 1, y: 1, z: 1}
+--- !u!82 &8980854148673908594
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885483230182507517}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -158861993403262650, guid: 6ada77192639627468479d16a4d04f24, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2525543819455817230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885483230182507517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4614b86abf3fe0749810d84271a74bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerFootsteps
+  footstepClips:
+  - {fileID: 8300000, guid: a99fabb39c9eaf6469ea2789b4ebb1a9, type: 3}
+  - {fileID: 8300000, guid: e75d342feff069448a7aa9732d374c32, type: 3}
+  - {fileID: 8300000, guid: 4e68888640e0df244807b97fbfe2dd00, type: 3}
+  - {fileID: 8300000, guid: 1e7dbf3913434d946b941642184a2478, type: 3}
+  - {fileID: 8300000, guid: adb52a8a9a7b0644bb13fdc372c161e2, type: 3}
+  - {fileID: 8300000, guid: f1769f1034bee09478c848c9ccb2ab32, type: 3}
+  - {fileID: 8300000, guid: b36de1fba0975f44abb74a1fcd5ea645, type: 3}
+  - {fileID: 8300000, guid: adb5f3f4034f4fb4ab08d9800d2951a8, type: 3}
+  landingClip: {fileID: 0}
+  walkStepDistance: 1.8
+  sprintStepDistance: 2.4
+  crouchStepDistance: 1.2
+  walkVolume: 0.6
+  sprintVolume: 1
+  crouchVolume: 0.25
+  pitchRange: {x: 0.92, y: 1.08}
+  landingMinFallSpeed: 4
 --- !u!1 &5960126741432043734
 GameObject:
   m_ObjectHideFlags: 0

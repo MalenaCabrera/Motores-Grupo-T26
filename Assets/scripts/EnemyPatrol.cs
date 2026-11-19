@@ -16,10 +16,11 @@ public class EnemyPatrol : MonoBehaviour
     private bool isRotating;
 
     [Header("Persecucin")]
-    [SerializeField] private float velocidadPersecucion = 6f;
+    [SerializeField] private float velocidadPersecucion = 4.5f;
     private Transform targetJugador;
     private PlayerHealth vidaJugador; // reference to the health of the player we're chasing
     private bool estaPersiguiendo;
+    public bool IsChasing => estaPersiguiendo;
     [SerializeField] private string gameOverScene = "GameOverZombie1";
 
     void Start()

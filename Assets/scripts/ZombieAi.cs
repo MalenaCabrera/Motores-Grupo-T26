@@ -72,6 +72,7 @@ public class ZombieAI : MonoBehaviour
     private PlayerHealth playerHealth;
     private PlayerNew playerScript;
     private State state = State.Patrol;
+    public bool IsChasing => state == State.Chase;
     private Vector3 home;
     private bool animHasSpeed;
     private bool animHasAttack;
