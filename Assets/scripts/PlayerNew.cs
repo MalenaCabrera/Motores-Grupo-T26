@@ -30,6 +30,8 @@ public class PlayerNew : MonoBehaviour
     [Header("Player Settings")]
     [SerializeField] private float walkSpeed = 4f;
     [SerializeField] private float sprintSpeed = 7f;
+    [SerializeField] private bool sprintBloqueado = false;
+    public bool SprintBloqueado { get => sprintBloqueado; set => sprintBloqueado = value; }
     [SerializeField] private float jumpHeight = 1.2f;
     [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float gravity = -15f;
@@ -151,7 +153,8 @@ public class PlayerNew : MonoBehaviour
         Vector2 inputMove = _playerInput.actions["Move"].ReadValue<Vector2>();
 
         bool wantsCrouch = _playerInput.actions["Crouch"].IsPressed();
-        bool wantsSprint = _playerInput.actions["Sprint"].IsPressed() && !wantsCrouch;
+        bool wantsSprint = !sprintBloqueado && _playerInput.actions["Sprint"].IsPressed() && !wantsCrouch;
+        
 
         float currentSpeed = walkSpeed;
         if (wantsCrouch)
